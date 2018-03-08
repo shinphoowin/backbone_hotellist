@@ -1,0 +1,27 @@
+{
+  "name": "backbone_test",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://shinphoowi.github.io/backbone_test/",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shinphoowin/backbone_test.git"
+  },
+  "author": "shinphoowin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shinphoowin/backbone_test/issues"
+  }, 
+  "dependencies": {
+    "gh-pages": "^1.1.0"
+  }
+}

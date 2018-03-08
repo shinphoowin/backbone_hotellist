@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html>
+<head>
+  <title>hotel booking</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Font -->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'> -->
+    <!-- //Font -->
+    <link rel="icon" href="images/fav.png" type="image/x-icon">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+ <!--    <link rel="stylesheet" type="text/css" href="css/starwars.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--[if lt IE 9]><script src="javascripts/html5shiv.js"></script>
+    <script src="javascripts/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="background: #eee">   
+  <div class="currentWH"></div>
+  <div class="row graybg">    
+        <div class="container" id="hotelviewsWrapper">
+
+            <div class="bottomtext" style="text-align: center;margin-bottom: 40px;font-weight: 600;">
+                Hotel List By Backbone.js with LocalStorage<span></span>
+            </div>
+
+            <div class="row bookdatatsearchbar" id="hotelformWrapper">
+                <div class="col-lg-3 col-md-3 col-sm-12">
+                    <img src="images/SavoyHotel.png" width="200" alt="Image preview..." id="previewimg">
+                </div>
+
+                <div class="col-lg-9 col-md-9 col-sm-12">
+                        <div class="clearfix"> </div>          
+                        <div class="subsearchform">
+                          <span>INSERT HOTEL PIC</span>
+                          <input type="file" id="hotelimg">
+                        </div>
+
+                        <div class="subsearchform">
+                          <span class="verticalborder"></span>
+                          <span>HOTEL NAME</span>
+                          <input type="text" id="hotelname">
+                        </div>
+
+                        <div class="subsearchform">
+                          <span>HOTEL ADDRESS</span>
+                          <input type="text" id="hoteladdress">
+                        </div>
+
+                        <div class="subsearchform">
+                          <span class="verticalborder"></span>
+                          <span>HOTEL CLASS</span>
+                          <input type="text" id="hotelclass">           
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <a class="readmore">add hotel</a>
+                </div>              
+            </div>  
+            <div id="hotelcountWrapper"></div>
+            <div id="hotellistWrapper"></div>          
+
+        </div><!-- #container -->
+  </div><!-- #graybg -->
+
+  <script type="text/template" id="hotelcounter-template">
+      <h4>Number Of Hotels : <span class="btn btn-info"><%= hotellistcount %><span></h4>
+  </script>
+
+  <script type="text/template" id="item-template">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 hotelbook">
+           
+            <ul class="hotelinfo">
+             <li>
+                <!-- <img src="images/chartium.png">         -->
+                <img src="<%= coverImage %>" class="newpreviewimg<%= this.model.cid %>">
+                <input type="file" class="edit updatehotelimg">
+              </li>
+              <li class="text">
+
+                  <!-- <div class="middletextWrapper"> -->     
+                    <div class="maintext twofourfontsize"><%= hotelName %></div>
+                    <input type="text" class="edit" id="hname" value="<%= hotelName %>">
+
+                    <p class="graytext"><%= hotelAddress %></p>  <br/>  
+                    <input type="text" class="edit" id="hadd" value="<%= hotelAddress %>">
+
+                    <p class="graytext"><%= hotelClass %></p>  <br/>  
+                    <input type="text" class="edit" id="hclass" value="<%= hotelClass %>">
+
+                    <div class="wrap_form">
+                        <div class="rate_row"></div>
+                    </div><!--.wrap_form-->
+
+                    <div class="btnrow">
+                        <a class="btn btn-success updatebtn" id="updatebtn">Update</a> 
+                        <a class="btn btn-primary editbtn" id="editbtn">Edit</a> 
+                        <a class="btn btn-danger delbtn" id="delbtn">Delete</a> 
+                    </div>
+                           
+                  <!-- </div> -->
+
+              </li>             
+            </ul>
+           
+        </div> 
+  </script>
+
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script src="lib/bootstrap.min.js"></script>
+<script src="lib/underscore-min.js"></script>
+<script src="lib/backbone-min.js"></script>
+<script src="lib/backbone.localStorage.js"></script>
+<script src="js/models/hotel.js"></script>
+<script src="js/collections/hotels.js"></script>
+<script src="js/views/hotelsview.js"></script>
+<script src="js/views/individualhotelview.js"></script>
+<script src="js/hotelapp.js"></script>
+<script type="text/javascript">
+  console.error(app);
+  $(function(){
+    console.log('ready start');
+    $(window).on('resize',function(){
+      console.log("resize start");
+      $(".currentWH").text($(window).width() +"x"+ $(window).height());
+    })
+  })
+</script>
+
+<!-- <script src="js/starwarsjs.js"></script> -->
+<script type="text/javascript">
+  // $(document).ready(function(){
+  //   $(".scrolldownWrapper").click(function(){
+  //             $('html,body').animate({scrollTop: $(".welcome").offset().top-70},'slow');
+  //     });
+  //   $(".searchbtn").on('click',function(){
+  //         $('.searchbar').slideToggle();
+  //       });
+
+  //   //-------------
+  //    $('.rate_row').starwarsjs({
+  //         stars : 5,          
+  //         range : [1,5], //
+  //         count : 1,
+  //         disable : 0,
+  //         default_stars : 5
+  //     });
+
+  // })
+</script>
+
+</body>
+</html>

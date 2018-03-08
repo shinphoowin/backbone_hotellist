@@ -1,0 +1,312 @@
+@charset "utf-8";
+ /*http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+*{
+    outline: none;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html{
+    background: #eee;
+}
+body {
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif,Trebuchet MS,Zawgyi-one;
+    font-size: 15px;
+    overflow-x: hidden;
+    background: #eee;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/*//end css reset*/
+/* @font-face kit by Fonts2u (http://www.fonts2u.com) */ 
+a,a:hover{
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+.aboutinfo .maintext,.readmore{
+    color: #333;
+}
+.custumsearch,.readmore{
+    font-size: 12px;
+}
+.searchbox,.readmore,.editbtn,.delbtn{
+   border: 1px solid #f1f1f1;
+}
+.editbtn,.delbtn,.updatebtn{
+    padding: 8px 10px;
+    border-radius: 4px;
+    float: left;
+    margin-right: 4px;
+}
+.btnrow{
+    bottom: 16px;
+}
+.readmore:hover,.readmore:focus,
+.custumsearch{
+    background: #f15f24;
+    border: none;
+}
+.custumsearch {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    width: 150px;
+    line-height: 40px;
+}
+.searchbox{
+    padding-left: 13px;
+}
+/*#index*/
+.topmainSecion.tourpackages{
+    height: 401px;
+    background-position: center center;
+    background-size: cover;
+}
+/*tourpackages*/
+.graybg{
+    background: #eee;
+    padding: 90px 0 60px;
+}
+
+.graybg ul {
+    display: flex;
+}
+.graybg ul li {
+    width: 50%;
+    text-align: center;
+    position: relative;
+}
+.graybg ul li.text .bottomtext span{
+    background: #929191;
+}
+.graytext{
+    color: #929191;
+}
+.graybg ul li.text .maintext{
+    font-size: 30px;
+    margin: 17px 0; 
+}
+.fontsize30{
+    font-size: 30px;
+}
+.graybg ul li img{
+    height: 100%;
+    width: 100%;
+}
+.graybg ul li.text{
+    padding: 98px 80px;
+          background: #fff;
+}
+a,a:hover,a:focus{
+    text-decoration: none;
+}
+.subsearchform{
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    width: 47%;
+    float: left;
+    margin: 15px 0;
+}
+.subsearchform{
+    margin-right: 3%;
+}
+.subsearchform .fa-angle-down{
+    position: absolute;
+    height: 100%;
+    line-height: 44px;
+    width: 50px;
+    text-align: center;
+    right: 0;
+    font-size: 21px;
+    pointer-events: none;
+}
+.subsearchform input[type="text"],.subsearchform input[type="file"]{
+    width: 60%;
+    right: 0;
+    left: auto;
+    -webkit-appearance:none;
+    padding-left: 12px;
+    cursor: pointer;
+    position: absolute;
+    border: 1px solid #ddd;
+}
+.subsearchform input[type="file"]{
+    top: 0;
+}
+.bookdatatsearchbar{
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 23px 0;
+    position: relative;
+}
+.bookdatatsearchbar .readmore{
+    background: #f15f24;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    padding: 15px 40px;
+    margin-top: 40px;
+    display: block;
+    float: left;
+    text-transform: capitalize;
+    font-size: 13px;
+}
+.hotelbook ul{
+    margin-bottom: 30px;
+}
+.hotelbook ul li.text{
+    padding: 20px;
+    text-align: left;
+}
+.hotelbook ul li.text .readmore{
+    margin-top: 20px;
+    margin-left: 0;
+}
+ 
+/*#tourpackages*/
+
+/*AVOID DRY*/
+.welcometext,.aboutinfo,.leftcol,p{
+    line-height: 1.7em;
+}
+.footer,.welcometext,
+.basefooter,.aboutinfo,.leftcol,p{
+    font-size: 14px;
+}
+.searchbar,.updatebtn,.editing .editbtn,.edit,.editing .maintext,.editing .graytext,.edit.updatehotelimg{
+    display: none;
+}
+.editing .updatebtn,.editing .edit,.editing .updatehotelimg{
+    display: block;
+}
+input[type="text"].edit{
+    height: 40px;
+    width: 100%;
+}
+.editing .updatehotelimg{
+    width: 200px;
+    top: 50%;
+    position: absolute;
+    text-align: center;
+    border: 4px solid white;
+    margin-left: 20px;
+}
+.paddleftze{
+    padding-left: 0;
+}
+.paddrightze{
+    padding-right: 0;
+}
+.search,.custumsearch,.overlaylayer,.centermiddleWrapper{    
+    bottom: 0;
+}
+.lan_select_bar,
+.scrolldownWrapper,.centermiddleWrapper,
+.overlaylayer,.searchbox,
+ul.promotionpack li img,.deatailtopimg,
+.individualcarrental img{
+    width: 100%;
+}
+.searchbox,.custumsearch,.overlaylayer,.centermiddleWrapper{
+    height:100%;
+}
+.overlaylayer,.centermiddleWrapper,ul.social,
+.searchbox,.custumsearch,.overlaylayer,.centermiddleWrapper{
+    top: 0;
+}
+.welcomeSection .bottomtext,.welcometext{
+    color: #929191;
+}
+.welcometext i{
+    font-style: italic;
+}
+.lan_select_bar{
+    z-index: 9999;
+}
+.navbar,.package.marginbottomze,
+.hotelbook ul:last-child,
+.tourpackWrap ul:last-child{
+    margin-bottom: 0;
+}
+/*#AVOID DRY*/
+#previewimg{
+    width: 200px;
+    height: 200px;
+}
+.hotelbook{
+    margin-bottom: 2em;
+}
+#hotelcountWrapper{
+    background: gainsboro;
+    width: 270px;
+    text-align: center;
+    margin-left: 15px;
+    margin-bottom: 40px;
+    padding: 10px;
+}
+.hotelinfo{
+    height: 250px;
+}
+@media(max-width: 600px){
+    .subsearchform{
+        margin-bottom: 25px;
+    }
+    .subsearchform input[type="text"],.subsearchform select,.subsearchform{
+        position: relative;
+        width: 100%;
+    }
+    .col-xs-6.hotelbook{
+        width: 100%;
+    }
+}
+@media(max-width: 480px){
+    .hotelbook.paddleftze{
+        margin-bottom: 32px;
+    }
+    .graybg ul.hotelinfo{
+        height: auto;
+    }
+}
+/*media control*/
